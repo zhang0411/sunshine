@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul,ol{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        #menu{
+            width: 300px;
+            border: 1px solid #000;
+        }
+        /* #menu .main-menu{
+              height: 30px;
+               width: 120px;
+              background:gray ;
+              margin-bottom: 5px;
+          }*/
+        #menu h3{
+            height: 30px;
+            background: #000;
+            color: #fff;
+        }
+        #menu .sub-menu{
+            display:none;
+            background: yellow;
+        }
+        #menu .sub-menu a{
+            /* text-align: center;*/
+            line-height: 30px;
+
+        }
+
+
+    </style>
+</head>
+<body>
+<ul id="menu">
+    <li class="main-menu">
+        <h3>表单</h3>
+        <ul class="sub-menu">
+            <li><a href="#">submenu1</a></li>
+            <li><a href="#">submenu2</a></li>
+            <li><a href="#">submenu3</a></li>
+        </ul>
+    </li>
+    <li class="main-menu">
+        <h3>分析</h3>
+        <ul class="sub-menu">
+            <li><a href="#">submenu1</a></li>
+            <li><a href="#">submenu2</a></li>
+            <li><a href="#">submenu3</a></li>
+        </ul>
+    </li>
+    <script>
+        var oMenu = document.getElementById('menu');
+        var aLi = oMenu.getElementsByTagName('li');
+        for(var i=0; i<aLi.length; i++){
+            if(aLi[i].className == 'main-menu'){
+                aLi[i].onclick = function(){
+                    var oSubMenu = this.getElementsByTagName('ul')[0];
+                    if(oSubMenu.style.display == 'block'){
+                        oSubMenu.style.display = 'none';
+                    }else{
+                        oSubMenu.style.display = 'block';
+                    }
+
+                };
+
+
+            }
+        }
+    </script>
+</ul>
+</body>
+</html>
