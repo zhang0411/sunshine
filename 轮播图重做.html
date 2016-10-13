@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        #container{
+            position: relative;
+            width: 680px;
+            height: 344px;
+            margin: 100px auto;
+
+        }
+         ul{
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+        #nab li{
+            float: left;
+            width: 20px;
+            height: 20px;
+            background: #000;
+            color: #fff;
+            text-align: center;
+            line-height: 20px;
+            margin-right: 5px;
+            cursor:pointer;
+        }
+        #contend{
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+        }
+        #contend span{
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+            margin-right: 5px;
+            float: left;
+            background: #000;
+            color: #fff;
+            cursor:pointer;
+        }
+        #img1 img.selected{
+            display: block;
+        }
+        #img1 img{
+              display: none;
+          }
+        #nab li.selected{
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div>
+        <ul id="nab">
+            <li class="selected">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+        <div id="img1">
+            <img  class="selected" src="img/1.jpg" alt=""/>
+            <img src="img/2.jpg" alt=""/>
+            <img src="img/3.jpg" alt=""/>
+            <img src="img/4.jpg" alt=""/>
+        </div>
+        <div id="contend">
+            <span id="pre">&lt;</span>
+            <span id="next">&gt;</span>
+
+        </div>
+    </div>
+</div>
+<script>
+    var oNab=document.getElementById('nab');
+    var aLi=oNab.getElementsByTagName('li');
+    var oImg1 = document.getElementById('img1');
+    var aImg = oImg1.getElementsByTagName('img');
+    var oNext = document.getElementById('next');
+    var oPre = document.getElementById('pre');
+    var iNow=0;
+
+    for(var i=0;i<aLi.length;i++) {
+        aLi[i].index = i;
+        aLi[i].onmouseover = function () {
+            ChangImg(this.index);
+        }
+    }
+    function ChangImg(idx){
+        for(var i=0; i<aLi.length; i++){
+            aLi[i].className = '';
+            aImg[i].className = '';
+        }
+        //elem.className = 'selected';
+        aLi[idx].className = 'selected';
+        aImg[idx].className = 'selected';
+    }
+        oNext.onclick = function(){
+            iNow++;
+            if(iNow == aImg.length){
+                iNow = 0;
+            }
+            ChangImg( iNow );
+        };
+        oPre.onclick = function(){
+            iNow -- ;
+            if(iNow == -1){
+                iNow = aImg.length-1;
+            }
+            ChangImg( iNow );
+        };
+
+
+</script>
+</body>
+</html>
