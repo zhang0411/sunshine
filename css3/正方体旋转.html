@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            -webkit-perspective: 800px;
+        }
+        #square{
+            width: 300px;
+            height: 300px;
+            margin: 400px auto;
+            /*background: #F296B2;*/
+            position: relative;
+            transform-style: preserve-3d;
+            -webkit-animation: xxx 5s linear infinite;
+
+        }
+        @-webkit-keyframes xxx {
+            0% {
+
+            }
+
+            100% {
+
+                -webkit-transform: rotateX(-360deg) rotateY(-360deg) rotateZ(-360deg);
+            }
+        }
+        .s{
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            top: 0;
+            left: 0;
+            text-align:center ;
+            line-height: 300px;
+            font-size: 100px;
+            color: #00A5FF;
+            border-radius: 7px;
+            background: #ccc;
+            opacity: .4;
+            filter: alpha(opacity: 40);
+            border: 1px solid #000;
+        }
+        #img1{
+            background: blueviolet;
+            width: 300px;
+            height: 300px;
+        }
+        #img2{
+
+            background: blueviolet;
+            width: 300px;
+            height: 300px;
+            -webkit-transform:rotateY(-90deg) translateY(-300PX)
+        }
+        #div1{
+            -webkit-transform: rotateY(180deg) translateZ(150px);
+        }
+        #div2{
+            -webkit-transform:rotateY(90deg) translateZ(150PX);
+        }
+        #div3{
+            -webkit-transform:rotateY(-90deg) translateZ(150PX);
+        }
+        #div4{
+            -webkit-transform:rotateX(-90deg) translateZ(150PX);
+        }
+        #div5{
+            -webkit-transform:rotateX(90deg) translateZ(150PX);
+        }
+        #div6{
+            -webkit-transform:translateZ(150px);
+        }
+    </style>
+</head>
+<body>
+<div id="square">
+    <div id="img1"></div>
+    <div id="img2"></div>
+    <div id="div1" class="s">1</div>
+    <div id="div2" class="s">2</div>
+    <div id="div3" class="s">3</div>
+    <div id="div4" class="s">4</div>
+    <div id="div5" class="s">5</div>
+    <div id="div6" class="s">6</div>
+</div>
+
+</body>
+</html>
