@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        ul{
+            list-style: none;
+        }
+        #clock{
+            width: 300px;
+            height: 300px;
+            border: 2px solid #000;
+            margin: 100px auto;
+            border-radius: 50%;
+            position: relative;
+            display: -webkit-flex;
+            -webkit-box-shadow: 10px 10px 5px #ccc;
+        }
+        /*.left-ear{*/
+            /*width: 80px;*/
+            /*height: 80px;*/
+            /*background: #000;*/
+            /*position: absolute;*/
+            /*border-radius: 50%;*/
+            /*top: -10px;*/
+            /*left: -10px;*/
+
+        /*}*/
+        #left{
+            width: 40px;
+            height: 80px;
+            border-radius: 50%;
+            background: #F296B2;
+            position: absolute;
+            top: 100px;
+            left: 70px;
+        }
+        #left div{
+            width: 20px;
+            height: 30px;
+            position: absolute;
+            background: #000;
+            border-radius: 50%;
+            top: 25px;
+            right: 0;
+        }
+        #right{
+            width: 40px;
+            height: 80px;
+            border-radius: 50%;
+            background: #F296B2;
+            position: absolute;
+            top: 100px;
+            right: 70px;
+        }
+        #right div{
+            width: 20px;
+            height: 30px;
+            position: absolute;
+            background: #000;
+            border-radius: 50%;
+            top: 25px;
+            right: 0;
+        }
+        #timeLabel{
+            width: 80px;
+            height: 30px;
+            background: pink;
+            position: absolute;
+            top: 220px;
+            left: 110px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 10px;
+        }
+        #dial li{
+            position: absolute;
+            top: 0;
+            left: 147px;
+            width: 4px;
+            height: 6px;
+            background: #0abfcf;
+            -webkit-transform-origin:center 150px;
+        }
+        #dial li:nth-child(5n+1){
+            background: #ffff00;
+            width: 4px;
+            height: 10px;
+
+        }
+        #hour{
+            width: 8px;
+            height: 55px;
+            background: #111111;
+            position: absolute;
+            left: 146px;
+            top: 95px;
+        }
+        #minute{
+            width: 6px;
+            height: 65px;
+            background: #000;
+            position: absolute;
+            left: 147px;
+            top: 85px;
+        }
+        #second{
+            width: 4px;
+            height: 85px;
+            background: red;
+            position: absolute;
+            left: 148px;
+            top: 65px;
+        }
+        #hour,#minute,#second{
+            -webkit-transform-origin: center bottom;
+        }
+    </style>
+</head>
+<body>
+    <div id="clock">
+        <ul id="dial"></ul>
+        <div class="left-ear"></div>
+        <div id="left">
+            <div></div>
+        </div>
+        <div id="right">
+            <div></div>
+        </div>
+        <div id="timeLabel"></div>
+        <div id="hour"></div>
+        <div id="minute"></div>
+        <div id="second"></div>
+    </div>
+<script>
+
+    var oDial=document.getElementById('dial');
+    var oHour=document.getElementById('hour');
+    var oMinute=document.getElementById('minute');
+    var oSecond=document.getElementById('second');
+    var oTimeLabel=document.getElementById('timeLabel');
+    var html='';
+
+    for(var i=0;i<60;i++){
+    html+="<li style='-webkit-transform:rotate("+i*6+"deg)'></li>"
+    }
+    oDial.innerHTML=html;
+    run();
+
+    setInterval(run,1000);
+    function run(){
+        var now= new Date();
+        hour = now.getHours();
+        minute = now.getMinutes();
+        second = now.getSeconds();
+        oTimeLabel.innerHTML=hour+':'+minute+':'+second;
+        oHour.style.WebkitTransform='rotate('+hour*30+1/2*minute+1/10*second+'deg)';
+        oMinute.style.WebkitTransform='rotate('+minute*6+1/10*second+'deg)';
+        oSecond.style.WebkitTransform='rotate('+second*6+'deg)';
+    }
+
+
+
+
+
+</script>
+</body>
+</html>
