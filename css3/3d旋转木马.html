@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            -webkit-perspective: 800px;
+            -webkit-perspective-origin: center -30%;
+        }
+        #circle{
+            width: 200px;
+            height: 300px;
+            margin: 200px auto;
+            position: relative;
+            transform-style: preserve-3d;
+            -webkit-transition: -webkit-transform 2s;
+
+        }
+        #circle div{
+            width: 200px;
+            height: 300px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        img{
+            opacity: .9;
+            filter: alpha( opacity:90);
+
+        }
+        #one{
+            -webkit-transition: -webkit-transform 1.8s;
+
+        }
+        #two{
+            -webkit-transition: -webkit-transform 1.7s;
+        }
+        #three{
+            -webkit-transition: -webkit-transform 1.6s;
+        }
+        #four{
+            -webkit-transition: -webkit-transform 1.5s;
+        }
+        #five{
+            -webkit-transition: -webkit-transform 1.4s;
+        }
+        #six{
+            -webkit-transition: -webkit-transform 1.3s;
+        }
+
+        #seven{
+            -webkit-transition: -webkit-transform 1.2s;
+        }
+        #eight{
+            -webkit-transition: -webkit-transform 1s;
+        }
+    </style>
+</head>
+<body>
+<div id="circle">
+    <div id="one"><img  src="img/1.1.jpg" alt=""/></div>
+    <div id="two"><img  src="img/1.2.jpg" alt=""/></div>
+    <div id="three"><img  src="img/1.3.jpg" alt=""/></div>
+    <div id="four"><img  src="img/1.4.jpg" alt=""/></div>
+    <div id="five"><img  src="img/1.5.jpg" alt=""/></div>
+    <div id="six"><img  src="img/1.6.jpg" alt=""/></div>
+    <div id="seven"><img src="img/1.7.jpg" alt=""/></div>
+    <div id="eight"><img  src="img/1.8.jpg" alt=""/></div>
+</div>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    $(function(){
+        var  b=0;
+        $('#circle').on('click',function(){
+            b+=45;
+            $(this).css('-webkit-transform','rotateY('+b+'deg)')
+        });
+        var c=360;
+        for(var i=0;i<8;i++){
+
+            $('#circle div').eq(i).css('-webkit-transform','rotateY('+c+'deg) translateZ(300px)');
+            c-=45;
+        }
+
+    })
+
+</script>
+</body>
+</html>
