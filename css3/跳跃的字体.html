@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+     #div1{
+         margin:300px auto;
+         text-align: center;
+         background: #abcdef;
+         width: 300px;
+         height: 20px;
+         line-height: 20px;
+         position: relative;
+     }
+     #div1 span{
+
+         margin-right: 10px;
+
+     }
+    span:nth-child(1){
+           -webkit-animation:.5s  move alternate infinite;
+        }
+     span:nth-child(2){
+         -webkit-animation: .5s .1s move alternate infinite;
+     }
+     span:nth-child(3){
+         -webkit-animation: .5s .2s move alternate infinite;
+     }
+     span:nth-child(4){
+         -webkit-animation: .5s .3s move alternate infinite;
+     }
+     span:nth-child(5){
+         -webkit-animation: .5s .4s move alternate infinite;
+     }
+     span:nth-child(6){
+         -webkit-animation: .5s .5s move alternate infinite;
+     }
+     span:nth-child(7){
+         -webkit-animation: .5s .6s move alternate infinite;
+     }
+     span:nth-child(8){
+         -webkit-animation: .5s .7s move alternate infinite;
+     }
+     span:nth-child(9){
+         -webkit-animation: .5s .8s move alternate infinite;
+     }
+        @-webkit-keyframes move {
+            from{
+                -webkit-transform: translateY(0);
+            }
+            to{
+               -webkit-transform: translateY(-25px);
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="div1">
+    <span>接</span><span>下</span><span>来</span><span>更</span><span>精</span><span>彩</span><span>.</span><span>.</span><span>.</span>
+</div>
+
+</body>
+</html>
