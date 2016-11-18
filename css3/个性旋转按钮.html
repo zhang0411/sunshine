@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #container{
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+        }
+        .images{
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            -webkit-transition: transform 1s ease-in-out;
+        }
+        #home{
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            -webkit-transition: transform 1s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <img class="images" src="img/close.png" alt=""/>
+    <img class="images" src="img/full.png" alt=""/>
+    <img class="images" src="img/open.png" alt=""/>
+    <img class="images" src="img/prev.png" alt=""/>
+    <img class="images" src="img/refresh.png" alt=""/>
+    <div id="home">
+        <img src="img/home.png" alt=""/>
+    </div>
+</div>
+<script>
+    var oContainer=document.getElementById('container');
+    var oHome=document.getElementById('home');
+    var aImg=oContainer.getElementsByClassName('images');
+    var dFrag=false;
+    oHome.onclick=function(){
+        this.style.WebkitTransform='rotate(360deg)';
+        if(!dFrag){
+            for(var i=0;i<aImg.length;i++){
+                aImg[i].style.WebkitTransitionDelay=i*40+'ms';
+                aImg[i].style.WebkitTransform='translate('+(-180)*Math.cos((i*22.5)*Math.PI/180)+'px,'+ (-180)*Math.sin((i*22.5)*Math.PI/180)+'px) rotate(-360deg)'
+            }
+        }else{
+            for(var i=0;i<aImg.length;i++){
+                aImg[i].style.WebkitTransitionDelay= (aImg.length - i) * 40 + 'ms';
+                        aImg[i].style.WebkitTransform='translate(0,0) rotate(0deg)'
+            }
+            this.style.WebkitTransform = "rotate(0deg)";
+        }
+        dFrag = !dFrag;
+    };
+    for(var i=0;i<aImg.length;i++){
+        aImg[i].onclick=function(){
+            var nowTransform=this.style.WebkitTransform;
+            this.style.WebkitTransitionDuration = ".3s";
+            this.style.WebkitTransform=nowTransform+'scale(2)';
+            this.style.opacity=.5;
+           var fn= function (){
+                this.style.WebkitTransform= nowTransform;
+                this.style.opacity=1;
+                this.removeEventListener('webkitTransitionEnd',fn);
+            };
+            this.addEventListener('webkitTransitionEnd',fn,false);
+
+        }
+    }
+</script>
+</body>
+</html>
