@@ -1,0 +1,162 @@
+#content{
+    width: 100%;
+}
+ #content a img {
+     width: 100%;
+     display: block;
+ }
+ #small{
+     display: none;
+ }
+#content1{
+    /*width: 100%;*/
+    /*/!*height: 390px;*!/*/
+    /*background: #000;*/
+    /*text-align: center;*/
+    /*padding-top: 80px;*/
+    /*padding-bottom: 80px;*/
+    background: #202020;
+    padding: 90px 35px;
+    text-align: center;
+}
+#star{
+    width: 100%;
+    overflow: hidden;
+}
+#star a img{
+    width: 100%;
+    height: auto;
+}
+#content1 h2{
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 38px;
+    color: #fffffe;
+    margin:0 0 8px;
+  }
+#content1 p{
+    font-size: 18px;
+    line-height: 32px;
+    color: #999;
+}
+#load a{
+    display: none;
+}
+.button{
+    /*padding-top: 100px;*/
+    margin-top: 55px;
+}
+.button a{
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    color: #8a6d3b;
+    border: 3px solid #8a6d3b;
+    padding: 20px 50px;
+    margin:0 15px;
+    display: inline-block;
+
+}
+.button a:hover{
+    background: #8a6d3b;
+    color: #fff;
+}
+@media (max-width: 1400px) {
+
+    .img1 .photo{
+        width: 100%;
+        padding-top: 100%;
+    }
+}
+@media (max-width: 1310px){
+    #circle .yuan .l{
+        display:inline-block;
+    }
+}
+@media (max-width: 900px){
+    #circle .yuan .r{
+        display:inline-block;
+    }
+}
+@media (max-width: 1200px) {
+    .right .button{
+        margin-bottom: 30px;
+    }
+    .right .button a{
+        display: block;
+        margin-top:7px;
+        font-size: 30px;
+    }
+    body #reserve .left{
+        width: 100%;
+    }
+    body #reserve .left img{
+        width: 60%;
+        margin:0 40px;
+    }
+    body #reserve .right{
+        width: 100%;
+        float: none;
+    }
+    body #reserve .right h3,p{
+        margin: 0 30px;
+    }
+}
+@media (max-width: 1220px) {
+    #small{
+        display: block;
+    }
+    #big{
+        display: none;
+    }
+    .app .content h2{
+        margin-top: 150px;
+    }
+    .app .content p{
+        width: 100%;
+    }
+    #app .iphone img{
+        width: 85%;
+        display: block;
+        bottom: 0;
+        left: 15%;
+        position:relative;
+    }
+    #load a{
+        width: 30%;
+        border:2px solid #a98e67;
+        height: 43px;
+        line-height: 43px;
+        text-align: center;
+        display: block;
+        color:#a98e67;
+        text-decoration: none;
+    }
+    #load a:hover{
+        color:#fffffe;
+        background: #a98e67;
+    }
+
+    .content .button{
+        display: none;
+    }
+    body #app{
+        height: auto;
+    }
+}
+@media (max-width:1200px ) {
+    #content1 .button a{
+        display: block;
+        margin-top: 5px;
+    }
+}
+@media (max-width: 1000px) {
+    #right span,a{
+        font-size: 15px;
+        top: 45px;
+    }
+    #content #star a img{
+        height: 150px;
+        width: auto;
+    }
+}

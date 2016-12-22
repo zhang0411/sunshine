@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title></title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        body{
+            background: #000;
+        }
+        #container li{
+            float: left;
+            margin-right: 2px;
+            margin-bottom: 2px;
+        }
+        #container li:nth-child(4n){
+            margin-right: 0;
+        }
+        #container li img{
+            width: 100%;
+            height: 100%;
+        }
+        #big-img{
+            display: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+    <body>
+    <ul id="container"></ul>
+    <div id="big-img"></div>
+    <script src="zepto.min.js"></script>
+    <script>
+        $(function(){
+            var $container = $('#container');
+            var $big = $('#big-img');
+            var html='';
+            var $index=0;
+            for(var i=0;i<24;i++){
+                var html = $('<li><img src="img/'+(i+1)+'.jpg"></li>');
+                html.css({
+                    width:($('body').width()-6)/4,
+                    height:($('body').width()-6)/4
+                });
+                $container.append(html);
+            }
+            $('li').on('singleTap',function(){
+                $index=$(this).index();
+                $('li').hide();
+                $big.show().css({
+                    background:'url(img/'+($index+1)+'.jpg) no-repeat center',
+                    backgroundSize:'contain'
+                })
+            });
+           $big.on('tap',function(){
+               $('li').show();
+               $big.hide();
+           }).on('swipeLeft',function(){
+               $index++;
+               if($index==24){
+                   $index=0;
+               }
+               $big.css({
+                   background:'url(img/'+($index+1)+'.jpg) no-repeat center',
+                   backgroundSize:'contain'
+               })
+           }).on('swipeRight',function(){
+               $index--;
+               if($index==-1){
+                   $index=23;
+               }
+               $big.css({
+                   background:'url(img/'+($index+1)+'.jpg) no-repeat center',
+                   backgroundSize:'contain'
+               })
+           })
+        });
+
+
+    </script>
+
+    </body>
+</html>

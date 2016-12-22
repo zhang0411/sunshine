@@ -1,0 +1,199 @@
+#app{
+    padding: 0 30px 80px 30px;
+    height: 800px;
+    background: #e0e0e0;
+    position: relative;
+}
+/*#app1{*/
+    /*margin: 0 auto;*/
+/*}*/
+/*.app .iphone{*/
+    /*padding-top: 70px;*/
+    /*float: right;*/
+    /*width: 40%;*/
+    /*height: 90%;*/
+    /*background-size: contain;*/
+/*}*/
+.iphone img{
+    width: 40%;
+   position: absolute;
+    bottom: 59px;
+    right: 0;
+}
+#app .app{
+    position: relative;
+    margin: 0 auto;
+    width: 90%;
+    height: 100%;
+    display: table;
+    z-index: 1;
+}
+.content {
+    /*float: left;*/
+    /*width: 40%;*/
+    /*height:534px;*/
+    /*margin-left: 150px;*/
+    /*padding-top:250px*/
+    vertical-align: middle;
+    display: table-cell;
+}
+.content h2{
+    margin-bottom: 30px;
+    height: 30px;
+    color: #8a6d3b;
+    font-size: 20px;
+}
+.content p{
+    width: 62%;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 40px;
+    font-family: "Microsoft Yahei";
+    color: #31333e;
+}
+.img1{
+    overflow: hidden;
+}
+.photo{
+    width: 50%;
+    padding-top: 50%;
+    height: 0;
+    background-size: cover;
+    position: relative;
+    float: left;
+}
+#zuo{
+    background-image: url("img/20e42950-aa53-11e6-9345-bca7c77dab11.jpeg");
+}
+#you{
+    background-image: url("img/homepage-grid.jpg");
+}
+.text{
+    display: table;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left:0;
+    top:0;
+}
+.box{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+#coffee{
+    clear: both;
+    width: 100%;
+    height: 850px;
+}
+#love{
+    width: 100%;
+    height: 360px;
+    margin: 0 auto;
+    text-align: center;
+}
+#love h3{
+    color: #8a6d3b;
+    padding-top: 100px;
+}
+#love h2{
+    padding-top: 40px;
+    font-size: 40px;
+    font-weight: 600;
+}
+#love hr{
+    width: 150px;
+    margin: 30px auto;
+}
+#love p{
+    font-size: 25px;
+    padding-bottom: 60px;
+}
+
+#images{
+    padding: 80px 10px;
+    height: auto;
+}
+#box{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 360px;
+}
+#images #pic{
+    width: 2960px;
+    position: absolute;
+}
+#pic div{
+    width: 360px;
+    height: 360px;
+    margin-left:10px;
+    float: left;
+}
+.img a img{
+    width:100%;
+    height: 100%;
+
+}
+.yuan div{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #8a6d3b;
+    display: inline-block;
+}
+.yuan .circle{
+    display: none;
+}
+.yuan{
+    text-align: center;
+}
+#circle{
+    width: 100%;
+    margin-top: -60px;
+}
+#reserve{
+    margin-top: 50px;
+    width: 100%;
+    background: #000;
+}
+#reserve .left{
+    display: inline-block;
+    width: 50%;
+}
+#reserve .left img{
+    width:80%;
+    margin-left: 40px;
+}
+#reserve .right{
+    display: inline-block;
+    width: 50%;
+    float: right;
+    text-align: center;
+    height: auto;
+}
+.right h3{
+    margin-top: 150px;
+    color: #927750;
+    margin-right: 40px;
+}
+.right p{
+    margin-top: 20px;
+    font-size: 35px;
+    font-weight: 600;
+    color: #949494;
+    line-height: 50px;
+    margin-right: 40px;
+}
+.right .button{
+    margin-top: 100px;
+}
+.footer{
+    width: 100%;
+    height: 140px;
+    background: #454545;
+}
+.col-xs-12{
+   margin-left: 100px;
+    padding-top: 45px;
+}

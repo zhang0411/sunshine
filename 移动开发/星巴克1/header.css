@@ -1,0 +1,130 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+html{
+    width: 100%;
+}
+body{
+    width: 100%;
+}
+#container{
+    width: 100%;
+    position: relative;
+
+}
+#header{
+    width: 100%;
+    height: 130px;
+    background: #fff;
+    /*position: fixed;*/
+}
+#left{
+    position: absolute;
+    left: 50px;
+    top:50px ;
+}
+#middle{
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    margin-left: -36px;
+    width: 73px;
+    height: 73px;
+}
+#middle img{
+    width: 100%;
+}
+#right{
+    float: right;
+    position: absolute;
+    right: 50px;
+    width: 100px;
+    top: 30px;
+}
+#right span,a{
+    font-size: 20px;
+    font-family: "Microsoft YaHei";
+}
+#right a{
+    color: #d58512;
+    text-decoration: none;
+}
+/*Òþ²Ø²Ëµ¥*/
+/*.list{*/
+    /*width: 0;*/
+    /*display: none;*/
+    /*overflow: auto;*/
+/*}*/
+.list #nav-list{
+    height: 900px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    background:#262626 ;
+    overflow: auto;
+}
+.nav li{
+    width: 270px;
+}
+#nav li{
+    width: 250px;
+}
+#up{
+    border-bottom: 1px solid #B1B1B1;
+}
+.list .nav-list ul{
+    list-style: none;
+}
+.list .nav-list a{
+    text-decoration: none;
+}
+.top li a{
+    padding-left: 15px;
+    color: #66512c;
+   line-height: 50px;
+    font-family: "Microsoft Yahei";
+    font-size: 10px;
+}
+.top li a:hover{
+    color: #9d9d9d;
+}
+#nav li a{
+    color: #9d9d9d;
+    font-family: "Microsoft Yahei";
+    padding-left: 15px;
+    line-height: 50px;
+    font-size: 10px;
+}
+#nav li a:hover{
+    color: #66512c;
+}
+#nav div{
+    padding-left: 15px;
+    color: #9d9d9d;
+    font-size: 10px;
+    font-weight: 600;
+    font-family: "Microsoft Yahei";
+    line-height: 50px;
+}
+#nav div:hover{
+    color: #66512c;
+}
+.children{
+    display: none;
+    cursor: pointer;
+}
+.children li{
+    height: 30px;
+    margin: 0px 0px 5px 15px;
+
+
+}
+.hasChildren{
+    cursor: pointer;
+}
+
+.hasChildren span{
+    background: url('img/menu_icon_right.png') no-repeat;
+}
