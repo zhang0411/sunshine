@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="app">
+    第{{message}}次点击
+    <button v-on:click="message+=1">点击</button>
+    <!--<button v-on:click="say('bye')">dff</button>-->
+    <p>
+        <input type="checkbox" v-model="checked">
+        {{checked ? "yes" : "no"}}
+    </p>
+    <p>
+        <input type="radio" name="picked" value="one" v-model="picked">
+        <input type="radio" name="picked" value="two" v-model="picked">
+        {{picked}}
+    </p>
+</div>
+
+<script src="vue.js"></script>
+<script>
+    var vm=new Vue({
+        el:'#app',
+        data:{
+            message:0,
+            checked:true,
+            picked   : 'one'
+        },
+        methods:{
+            say:function(a){
+                alert(a+event.target.tagName);
+            }
+        }
+
+    })
+
+
+
+</script>
+</body>
+</html>

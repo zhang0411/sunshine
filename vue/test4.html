@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+
+
+
+<div id="app">
+    <my-component></my-component>
+</div>
+</body>
+<script src="vue.js"></script>
+<script>
+    //全局组件
+    Vue.component('my-component',{
+        template:'<div>djoi{{msg}}fwoe</div>',
+        data:function(){
+            return {
+                msg:'sss'
+            }
+        }
+    });
+    var vm = new Vue({
+        el:'#app',
+        data:{
+//            msg:'11111'
+        },
+//        components:{
+//            'my-component':{
+//                template:'<div>uhiore{{myComponentMy}}uteo[gp</div>',
+//                props:['myComponentMy']
+//            }
+//        }
+    })
+</script>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-for="item in items" >
+            {{item.name}}
+            {{item.sex}}
+        </li>
+    </ul>
+
+</div>
+</body>
+<script src="vue.js"></script>
+<script>
+
+  var vm = new Vue({
+      el:'#app',
+      data:{
+          items:[
+              {
+                  name:111,
+                  sex:'boy'
+              },
+              {
+                  name:222,
+                  sex:'girl'
+              },
+              {
+                  name:333,
+                  sex:'boy'
+              }
+          ]
+      }
+  });
+    vm.items.filter(function(item){
+          return item.name>1;
+    })
+
+</script>
+</html>

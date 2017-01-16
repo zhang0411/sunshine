@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style>
+    div{
+        width: 500px;
+        height: 700px;
+        margin: 100px auto;
+    }
+    .red{
+        color: red;
+        cursor: pointer;
+    }
+    .green{
+        color: green;
+        cursor: pointer;
+    }
+    ul li{
+        height: 30px;
+        width: 500px;
+    }
+</style>
+<body>
+<div id="app">
+    <input id="input" v-model="msg" v-on:input="search('msg')"  type="text"/><button  v-on:click="add">click</button>
+   <ul>
+       <li v-bind:class="{red:num.action,green:!num.action}" v-on:click="num.action=!num.action" v-for="num in showValue" >
+           {{num.value}}
+
+       </li>
+   </ul>
+</div>
+</body>
+    <script src="vue.js"></script>
+    <script>
+//        var arr=[];
+//        Vue.filter("change",function(value){
+//            console.log( value)
+//            arr.push(value);
+//            str = arr.sort().toString();
+//
+//            return str;
+//        });
+        var vm=new Vue({
+            el:'#app',
+            data:{
+                msg:'',
+                items:[],
+                showValue:[]
+            },
+            methods:{
+                add: function () {
+                    this.items.push({value:this.msg,action:false});
+                    this.msg='';
+//                    this.value.forEach(function(value){
+//                        arr.push(value);
+//                        console.log(arr.sort( ))
+//                    })
+                    this.items.sort(function(a,b){
+                        return a.value- b.value;
+                    });
+                    this.showValue=this.items;
+                },
+//                kong:function(){
+//                    var oInput = document.getElementById('input');
+//                    if(oInput.value){
+//                        oInput.value='';
+//                    }
+//                },
+                search:function(){
+                    vm.showValue=vm.items.filter(function(obj){
+                        return obj.value.includes(vm.msg);
+                    })
+                }
+            }
+        })
+
+
+    </script>
+</html>

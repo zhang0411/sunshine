@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+
+        .money{
+            float: right;
+        }
+        .green{
+            background: green;
+        }
+        .red{
+            background: red;
+        }
+        #app{
+            margin: 0 auto;
+            width: 400px;
+        }
+        li{
+            list-style: none;
+            height: 60px;
+            margin: 10px;
+            line-height: 60px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <h1 style="margin-left: 140px">services</h1>
+    <div>
+        <ul >
+            <li  v-for="name in names" v-bind:class="{red:!name.action,green:name.action}" v-on:click="name.action=!name.action">
+                {{name.name}}
+                <span  v-bind:class="[moneyClass]">{{name.money}}</span>
+            </li>
+        </ul>
+        <hr/>
+        <span style="margin-left:40px">{{total()}}</span>
+        <!--<input style="margin-left:40px" type="text"  v-model="{{total()}}"/>-->
+    </div>
+</div>
+<script src="vue.js"></script>
+<script>
+    var flag=true;
+    var vm = new Vue({
+        el:"#app",
+        data:{
+//            input:'￥0.00',
+
+            names:[
+                {
+                    name:"aaa",
+                    money:333,
+                    action:"false"
+                },
+                {
+                    name:"bbb",
+                    money:777,
+                    action:"false"
+                },
+                {
+                    name:"rrr",
+                    money:666,
+                    action:"false"
+                },
+                {
+                    name:"ggg",
+                    money:555,
+                    action:"false"
+                }
+            ],
+            moneyClass:'money',
+        },
+        methods:{
+            total:function(){
+                var totalMoney=0;
+                this.names.forEach(function(name){
+                    if(!name.action){
+                        totalMoney+=name.money;
+                    }
+                });
+                return totalMoney;
+            }
+
+        }
+    })
+
+
+</script>
+</body>
+</html>
